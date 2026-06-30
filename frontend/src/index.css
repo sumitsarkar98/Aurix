@@ -1,0 +1,52 @@
+:root {
+  --gold-primary: #8c5a12;
+  --gold-light: #6b4f1a;
+  --gold-deep: #5a3f10;
+  --gold-shimmer: #c9a961;
+  --gold-icon: #8c5a12;
+  --bg-light: #ffffff;
+  --bg-cream: #faf7f0;
+  --bg-card: #ffffff;
+  --bg-elevated: #f5f1e8;
+  --text-primary: #1a1815;
+  --text-secondary: #4a4438;
+  --text-muted: #6a5e48;
+  --border-gold: rgba(140, 90, 18, 0.4);
+  --border-subtle: rgba(140, 90, 18, 0.2);
+  --shadow-gold: 0 4px 24px rgba(140, 90, 18, 0.12);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.05);
+  --gradient-gold: linear-gradient(
+    135deg,
+    #b8893e 0%,
+    #8c5a12 50%,
+    #5a3f10 100%
+  );
+  --gradient-gold-soft: linear-gradient(
+    135deg,
+    rgba(184, 137, 62, 0.2) 0%,
+    rgba(140, 90, 18, 0.1) 100%
+  );
+  --background-image:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(232, 213, 160, 0.12) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(184, 137, 62, 0.06) 0%,
+      transparent 40%
+    );
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
