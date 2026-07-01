@@ -18,7 +18,7 @@ const goldPriceSchema = new mongoose.Schema(
     },
     effectiveDate: {
       type: Date,
-      default: Date.now,
+      required: true,
     },
     source: {
       type: String,

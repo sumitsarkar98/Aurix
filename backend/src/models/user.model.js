@@ -11,19 +11,21 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
+      unique: true,
       lowercase: true,
       trim: true,
-      unique: true,
-      sparse: true,
+      match: [/^\S+@\S+\.\S+$/, "Invalid email"],
     },
     phone: {
       type: String,
       required: true,
       unique: true,
+      match: [/^[6-9]\d{9}$/, "Invalid phone number"],
     },
     password: {
       type: String,
       required: true,
+      minlength: 6,
     },
     role: {
       type: String,
@@ -34,11 +36,6 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    address: {
-      type: String,
-      default: "",
-    },
-    currentLocation: {},
   },
   {
     timestamps: true,
