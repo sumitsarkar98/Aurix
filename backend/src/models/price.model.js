@@ -22,13 +22,17 @@ const goldPriceSchema = new mongoose.Schema(
     },
     source: {
       type: String,
-      enum: ["Admin", "API", "Manual"],
+      enum: ["Admin", "API"],
       default: "Admin",
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
     updatedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
   },
   {

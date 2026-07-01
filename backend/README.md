@@ -8,18 +8,18 @@ Aurix is a modern **full-stack MERN** application designed to streamline **gold 
 
 ## 🔐 User Authentication
 
-- Secure user registration (Sign Up)
-- User Login
-- User Logout
-- JWT-based authentication
-- Protected routes
+- Secure user registration (Sign Up) 👨‍💼
+- User Login 👨‍💼
+- User Logout 👨‍💼
+- JWT-based authentication 👨‍💼
+- Protected routes 👨‍💼
 
 ---
 
 ## 💰 Real-Time Gold Price
 
-- Display the current day's gold price
-- Securely fetch and manage gold rates
+- Display the current day's gold price 👨‍💼
+- Securely fetch and manage gold rates 👨‍💼
 - Automatically apply a **3% margin adjustment** before displaying and calculating prices
 
 ---
