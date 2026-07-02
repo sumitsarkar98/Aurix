@@ -1,18 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   --gold-primary: #8c5a12;
   --gold-light: #6b4f1a;
   --gold-deep: #5a3f10;
-  --gold-shimmer: #c9a961;
+  --gold-shimmer: #f9e6bb;
   --gold-icon: #8c5a12;
   --bg-light: #ffffff;
   --bg-cream: #faf7f0;
   --bg-card: #ffffff;
-  --bg-elevated: #f5f1e8;
+  --bg-elevated: #fffdfa;
   --text-primary: #1a1815;
   --text-secondary: #4a4438;
   --text-muted: #6a5e48;
   --border-gold: rgba(140, 90, 18, 0.4);
-  --border-subtle: rgba(140, 90, 18, 0.2);
+  --border-subtle: rgba(77, 48, 9, 0.2);
   --shadow-gold: 0 4px 24px rgba(140, 90, 18, 0.12);
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.05);
   --gradient-gold: linear-gradient(
@@ -21,32 +22,445 @@
     #8c5a12 50%,
     #5a3f10 100%
   );
-  --gradient-gold-soft: linear-gradient(
+  --gradient-gold-light: linear-gradient(
     135deg,
-    rgba(184, 137, 62, 0.2) 0%,
-    rgba(140, 90, 18, 0.1) 100%
+    #fffdf7 0%,
+    #f9e6bb 35%,
+    #ecd29a 70%,
+    #d9b86d 100%
   );
-  --background-image:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(232, 213, 160, 0.12) 0%,
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 85% 80%,
-      rgba(184, 137, 62, 0.06) 0%,
-      transparent 40%
-    );
+  --footer-bg: #7a0819;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--gold-shimmer);
+  color: var(--text-primary);
+}
 
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/*------------------ Header ------------------*/
+.border {
+  border: 1px solid var(--gold-deep) !important;
+}
+.header {
+  background: var(--gold-shimmer);
+}
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: var(--gold-primary);
+  text-decoration: none;
+}
+.header-cta,
+#update-rate-btn {
+  background: var(--gradient-gold);
+  color: var(--bg-light);
+  border: none;
+  letter-spacing: 1spx;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+.header-cta:hover {
+  background-color: var(--gold-light);
+  color: var(--bg-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(140, 90, 18, 0.25);
+}
+.nav-item {
+  transition: all 0.3s ease;
+}
+.nav-item:hover {
+  background-color: var(--gold-shimmer);
+  transform: translateY(-3px);
+}
+/*------------------ Footer ------------------*/
+footer {
+  background: var(--footer-bg);
+  color: var(--gold-shimmer);
+  padding: 2rem 0;
+  text-align: center;
+}
+/*------------------ Landing ------------------*/
+#hero {
+  color: var(--gold-icon);
+  min-height: 80vh;
+}
+#hero h1 {
+  font-family: var(--font-heading);
+  text-transform: capitalize;
+  font-weight: 300 !important;
+}
+#hero h1:nth-child(2) {
+  padding: 8px 20px;
+  color: var(--gold-deep);
+  font-style: italic;
+  border-bottom: 2px solid var(--gold-deep);
+}
+#hero p:nth-child(2) {
+  padding: 8px 20px;
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+/*------------------ Gold Price ------------------*/
+#gold-price-container {
+  background: var(--bg-light);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-gold);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+#gold-price-container h4,
+#update-gold-rate h4 {
+  font-family: var(--font-heading);
+  color: var(--gold-primary);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+#gold-price-container p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+#price-card {
+  background: var(--gradient-gold-light);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-card);
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+#price-card:hover {
+  background: var(--gold-shimmer);
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+  border: 1px solid var(--border-subtle);
+}
+#price-card h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+#price-card p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+/*------------------ Calculator ------------------*/
+.calculator-card {
+  border-radius: 18px;
+  background: var(--bg-light);
+  box-shadow: var(--shadow-card);
+}
+
+.calculator-title {
+  font-family: var(--font-heading);
+  color: var(--gold-primary);
+  font-style: italic;
+}
+
+.calculator-card .form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.calculator-card .form-control,
+.calculator-card .form-select {
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+}
+
+.calculator-card .form-control:focus,
+.calculator-card .form-select:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 0.2rem rgba(140, 90, 18, 0.15);
+}
+
+.calculator-btn {
+  height: 54px;
+  border: none;
+  border-radius: 10px;
+  background: var(--gradient-gold);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.calculator-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.result-card {
+  margin-top: 12px;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: var(--bg-cream);
+  border: 1px solid var(--border-subtle);
+}
+
+.result-card h6 {
+  color: var(--gold-primary);
+  font-family: var(--font-heading);
+}
+
+.result-card hr {
+  border-color: var(--border-subtle);
+}
+
+@media (max-width: 576px) {
+  .calculator-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .calculator-title {
+    font-size: 1.5rem;
+  }
+
+  .calculator-btn {
+    font-size: 0.9rem;
+  }
+}
+
+/*------------------ Auth Pages (Login / Signup) ------------------*/
+.auth-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  background: var(--bg-card);
+  border-radius: 18px;
+  box-shadow: var(--shadow-gold);
+  border: 1px solid var(--border-gold);
+  padding: 2.5rem 2rem;
+}
+
+.auth-title {
+  font-family: var(--font-heading);
+  color: var(--gold-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.auth-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.auth-input {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-light);
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 0.2rem rgba(140, 90, 18, 0.15);
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.auth-btn {
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: var(--gradient-gold);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.auth-link {
+  color: var(--gold-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+  color: var(--gold-deep);
+  text-decoration: underline;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.auth-divider span {
+  padding: 0 0.75rem;
+}
+
+.auth-error {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/*------------------ result ------------------*/
+.result-body {
+  color: var(--gold-icon);
+}
+/*------------------ admin dashboard ------------------*/
+#lead-management .lead-header h2 {
+  font-family: var(--font-heading);
+  color: var(--gold-icon);
+  font-weight: 400 !important;
+}
+#lead-card {
+  background: var(--gradient-gold);
+  color: var(--gold-shimmer);
+  padding: 18px;
+  transition: 0.25s ease;
+}
+
+#lead-card:hover {
+  transform: translateY(-4px);
+}
+
+#lead-card small {
+  display: block;
+  font-size: 0.8rem;
+}
+
+#lead-card .badge {
+  font-size: 0.75rem;
+}
+.lead-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .lead-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .lead-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .lead-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*------------------ Update gold rates ------------------*/
+#update-gold-rate .accordion-item {
+  background: transparent;
+  border: none;
+}
+
+#update-gold-rate .accordion-button {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+#update-gold-rate .accordion-button:not(.collapsed) {
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+
+#update-gold-rate .accordion-button::after {
+  transition: transform 0.3s ease;
+}
+
+#update-gold-rate .accordion-body {
+  padding-left: 0;
+  padding-right: 0;
 }
